@@ -5,6 +5,14 @@ export INTERFACE
 export HTTPPORT
 export SSLPORT
 
+//https://wiki.freepbx.org/display/FOP/Installing+FreePBX+14+on+CentOS+7    
+//disabling selinux
+if [ -f "/etc/sysconfig/selinux" ]
+then
+    sed -i 's/\(^SELINUX=\).*/\SELINUX=disabled/' /etc/sysconfig/selinux
+    sed -i 's/\(^SELINUX=\).*/\SELINUX=disabled/' /etc/selinux/config
+fi
+
 if [ -f "/etc/letsencrypt/archive/$HOSTNAME/cert1.pem" ]
 then
     ln -sf "/etc/letsencrypt/archive/$HOSTNAME/cert1.pem" /etc/pki/tls/certs/localhost.crt
