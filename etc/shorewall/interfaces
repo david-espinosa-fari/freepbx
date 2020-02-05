@@ -1,3 +1,7 @@
 #ZONE   INTERFACE       BROADCAST       OPTIONS
 net     docker0         detect          bridge,routefilter,tcpflags,logmartians,nosmurfs
+net     eth0         detect          bridge,routefilter,tcpflags,logmartians,nosmurfs
+net     host         detect          bridge,routefilter,tcpflags,logmartians,nosmurfs
+net     bridge         detect          bridge,routefilter,tcpflags,logmartians,nosmurfs
+
 
